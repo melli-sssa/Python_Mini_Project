@@ -24,7 +24,7 @@ def cpu_player():
             for ability in data['abilities']:
                 pokemon_abilities.append(ability["ability"]['name'])
 
-            print(f"Selection Complete! CPU chose: {pokemon_name} (National Dex #{pokemon_id})")
+            print(f"\n Selection Complete! CPU chose: {pokemon_name} (National Dex #{pokemon_id})")
 
             # Return stats as dictionary
             return {
@@ -39,6 +39,3 @@ def cpu_player():
 
     except Exception as e:
         print(f"An error occurred: {e}")
-
-
-cpu_player()
