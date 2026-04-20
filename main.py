@@ -16,10 +16,12 @@ if __name__ == '__main__':
     #     "abilities": pokemon_abilities
     # }
 
-    # while not check_winner(player_pokemon["health"], cpu_pokemon["health"]):
-    #     player_move(player_pokemon)
-    #     if check_winner(player_pokemon["health"], cpu_pokemon["health"]):
-    #         break
-    player_move(cpu_pokemon, user_turn = False)
+    while not check_winner(player_pokemon["hp"], cpu_pokemon["hp"]):
+        player_move(player_pokemon)
+
+        if check_winner(player_pokemon["hp"], cpu_pokemon["hp"]):
+            break
+
+        player_move(cpu_pokemon, user_turn = False)
 
 
