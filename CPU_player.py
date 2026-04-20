@@ -16,12 +16,13 @@ def cpu_player():
         if response.status_code == 200:
             data = response.json()
 
-            print(data)
-
-
             # Extract only the pieces we need: Name and ID
             pokemon_name = data['name'].capitalize()
             pokemon_id = data['id']
+            pokemon_abilities = []
+
+            for ability in data['abilities']:
+                pokemon_abilities.append(ability["ability"]['name'])
 
             print(f"Selection Complete! CPU chose: {pokemon_name} (National Dex #{pokemon_id})")
 
@@ -29,11 +30,9 @@ def cpu_player():
             return {
                 "name": pokemon_name,
                 "hp": 100,
-                "id": pokemon_id
-                "abilities": abilities_list
+                "id": pokemon_id,
+                "abilities": pokemon_abilities
             }
-
-
 
         else:
             print("Failed to find pokemon")
