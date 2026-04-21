@@ -3,6 +3,7 @@ from player_choosing_ability.player_move import player_move
 
 from check_winner import check_winner
 from cpu_player import cpu_player
+from damage.damage import damage_taken
 
 if __name__ == '__main__':
     # player_pokemon = Melissa player choosing pokemon
@@ -18,10 +19,12 @@ if __name__ == '__main__':
 
     while not check_winner(player_pokemon["hp"], cpu_pokemon["hp"]):
         player_move(player_pokemon)
+        cpu_pokemon["health"] = damage_taken(cpu_pokemon)
 
         if check_winner(player_pokemon["hp"], cpu_pokemon["hp"]):
             break
 
         player_move(cpu_pokemon, user_turn = False)
+        player_pokemon["health"] = damage_taken(player_pokemon)
 
 

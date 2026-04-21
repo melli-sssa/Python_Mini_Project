@@ -1,4 +1,5 @@
 import random
+from damage.damage import damage_taken
 
 def player_move(pokemon: object, user_turn = True) -> None:
     if user_turn:
@@ -24,5 +25,3 @@ def player_move(pokemon: object, user_turn = True) -> None:
 
     print(f"{pokemon['name']} uses {pokemon['abilities'][player_choice - 1]}")
     # Function to damage using random
-
-    # damage(user_turn)
