@@ -7,6 +7,8 @@ def player_move(pokemon: object, user_turn = True) -> None:
     else:
         print("\n--------------- CPU's turn, please wait ! ---------------- \n")
 
+    print(f"{pokemon['name']} has {pokemon['hp']} left! \n")
+
     print(f"Possible moves for {pokemon['name']}:")
 
     num_abilities = len(pokemon["abilities"])
