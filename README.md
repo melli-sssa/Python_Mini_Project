@@ -1,1 +1,1 @@
-pokemon game
+## Pokemon CLI game using pokapi
